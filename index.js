@@ -6,10 +6,10 @@ app.get('/', (req, res) => {
     res.send('Hello Rest-Rant World!')
 })
 app.get('*', (req, res) => {
-    res.send('<h1>404 Page</h1>')
+    res.status(404).send ('<h1>404 Page Not Found</h1>')
 })
 
-app.listen(process.env.PORT, () {
+app.listen(process.env.PORT, () => {
   console.log('Server is Running on localhost')
 })
 
