@@ -39,3 +39,8 @@ nav a:hover {
     color: pink;
     text-decoration: none;
 }
+
+img{
+    width: 300px;
+    height: auto;
+}

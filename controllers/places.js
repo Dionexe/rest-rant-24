@@ -1,12 +1,10 @@
 const router = require("express").Router();
 const places = require('../models/places')
-// router.get('/', (req, res) => {
-//     res.send('GET /places')
-// })
 
-router.get("/new", (req, res) => {
-  res.render("places/new");
-});
+
+// router.get("/new", (req, res) => {
+//   res.render("places/new");
+// });
 
 router.post("/", (req, res) => {
     console.log(req.body);
@@ -29,6 +27,20 @@ router.get("/", (req, res) => {
   res.render("places/index", { places });
 });
 
+router.get('/:id/edit', (req, res) => {
+    let id = Number(req.params.id)
+    if (isNaN(id)) {
+        res.render('error404')
+    }
+    else if (!places[id]) {
+        res.render('error404')
+    }
+    else {
+      res.render('places/edit', { place: places[id] })
+    }
+  })
+  
+
 router.delete('/:id', (req, res) => {
     let id = Number(req.params.id)
     if (isNaN(id)) {
@@ -43,9 +55,4 @@ router.delete('/:id', (req, res) => {
     }
   })
   
-  
-  
-  
-
-
-module.exports = router;
+   module.exports = router;
