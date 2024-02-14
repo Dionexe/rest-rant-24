@@ -3,7 +3,18 @@ require('dotenv').config()
 const express = require('express')
 const app = express()
 const methodOverride = require('method-override')
+const mongoose = require('mongoose')
+const MONGO_URI = process.env.MONGO_URI;
 
+//Database
+mongoose
+    .connect(MONGO_URI)
+    .then(() => {
+        console.log('connected to mongo: ' + MONGO_URI);
+    })
+    .catch((err) => {
+        console.log('Error connecting to mongo: ' + err);
+    });
 
 // Express Settings
 app.set('views', __dirname + '/views')
