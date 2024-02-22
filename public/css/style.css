@@ -1,23 +1,30 @@
 body {
     background-color: lightblue;
-    text-align: center;
-  }
-  
-  main {
-    margin-right: 20px;
-    margin-left: 20px;
-    background-color: white;
-  }
-  
+}
 
 h1 {
     text-align: center;
     color: cornflowerblue;
-  }
+}
 
-  nav {
+img {
+    display: block;
+    width: 600px;
+    max-width: 100%;
+    margin: 15px auto;
+}
+
+main {
+    max-width: 100%;
+    padding: 0 20px 40px;
+    background-color: #FFF;
+}
+
+nav {
     background-color: cornflowerblue;
     padding: 10px;
+    position: sticky;
+    top: 0;
 }
 
 nav ul {
@@ -33,14 +40,9 @@ nav li {
 nav a {
     color: white;
     font-size: 1.5em;
+    text-decoration: none;
 }
 
 nav a:hover {
     color: pink;
-    text-decoration: none;
-}
-
-img{
-    width: 300px;
-    height: auto;
 }
