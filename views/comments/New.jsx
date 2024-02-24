@@ -2,6 +2,19 @@ const React = require('react');
 const Def = require('../Default');
 
 const New = ({ place }) => {
+    let sumRatings = place.comments.reduce((tot, c) => {
+        return tot + c.stars
+      }, 0)
+      let averageRating = sumRatings / place.comments.length
+      let stars = ''
+      for (let i = 0; i < averageRating; i++) {
+        stars += '⭐️'
+      }
+      let rating = (
+        <h3>
+          {stars} stars
+        </h3>
+      )      
     return (
         <Def>
             <main>
