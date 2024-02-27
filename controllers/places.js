@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
     })
     .catch(err => {
       console.log(err) 
-      res.render('error404')
+      res.render('Error404')
     })
 })
 
@@ -24,13 +24,13 @@ router.post('/', (req, res) => {
   })
   .catch(err => {
       console.log('err', err)
-      res.render('error404')
+      res.render('Error404')
   })
 })
 
 
 router.get('/new', (req, res) => {
-  res.render('places/new')
+  res.render('places/New')
 })
 
 router.get('/:id', (req, res) => {
@@ -38,11 +38,11 @@ router.get('/:id', (req, res) => {
   .populate('comments')
   .then(place => {
       console.log(place.comments)
-      res.render('places/show', { place })
+      res.render('places/Show', { place })
   })
   .catch(err => {
       console.log('err', err)
-      res.render('error404')
+      res.render('Error404')
   })
 })
 
@@ -84,9 +84,9 @@ router.delete('/:id/rant/:rantId', (req, res) => {
 router.put("/:id", (req, res) => {
   let id = Number(req.params.id);
   if (isNaN(id)) {
-    res.render("error404");
+    res.render("Error404");
   } else if (!places[id]) {
-    res.render("error404");
+    res.render("Error404");
   } else {
     // Dig into req.body and make sure data is valid
     if (!req.body.pic) {
