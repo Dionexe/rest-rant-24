@@ -4,7 +4,7 @@ const Def = (html) => {
     return (
         <html>
             <head>
-                <title>Title</title>
+                <title>Dion's Rest Rant</title>
                 <link
                     rel='stylesheet'
                     href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css'
