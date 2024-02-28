@@ -1,15 +1,21 @@
-const React = require('react')
-const Def = require('../Default.jsx')
+const React = require("react");
+const Def = require("../Default.jsx");
 
-function edit_form (data) {
-    return (
-        <Def>
-          <main>
-            <h1>Edit Place</h1>
-            <form method="POST" action={`/places/${data.place.id}?_method=PUT`}>
+function edit_form(data) {
+  return (
+    <Def>
+      <main>
+        <h1>Edit Place</h1>
+        <form method="POST" action={`/places/${data.place.id}?_method=PUT`}>
           <div className="form-group">
             <label htmlFor="name">Place Name</label>
-            <input className="form-control" id="name" name="name" defaultValue = {data.place.name}required />
+            <input
+              className="form-control"
+              id="name"
+              name="name"
+              defaultValue={data.place.name}
+              required
+            />
           </div>
           <div className="form-group">
             <label htmlFor="pic">Place Picture</label>
@@ -32,11 +38,13 @@ function edit_form (data) {
               required
             />
           </div>
-          <input className="btn btn-primary" type="submit" value="Add Place" />
+          <button type="submit" className="btn btn-primary">
+            <i className="bi bi-floppy"></i> Save Changes
+          </button>
         </form>
-          </main>
-        </Def>
-    )
+      </main>
+    </Def>
+  );
 }
 
-module.exports = edit_form
+module.exports = edit_form;
