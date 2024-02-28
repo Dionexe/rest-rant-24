@@ -30,11 +30,11 @@ app.use(methodOverride('_method'))
 app.use('/places', require('./controllers/places'))
 
 app.get('/', (req, res) => {
-    res.render('home')
+    res.render('Home')
 })
 
 app.get('*', (req, res) => {
-    res.render('error404')
+    res.render('Error404')
 })
 
 // Listen for Connections
