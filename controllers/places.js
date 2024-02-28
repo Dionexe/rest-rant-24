@@ -1,5 +1,6 @@
-const router = require('express').Router()
-const db = require('../models')
+const express = require('express');
+const router = require('express').Router();
+const db = require('../models');
 
 router.get('/', (req, res) => {
     db.Place.find()
@@ -47,10 +48,6 @@ router.get('/:id', (req, res) => {
 })
 
 
-router.put('/:id', (req, res) => {
-  res.send('PUT /places/:id stub')
-})
-
 router.delete('/:id', (req, res) => {
   db.Place.findByIdAndDelete(req.params.id)
       .then(() => {
@@ -63,7 +60,7 @@ router.delete('/:id', (req, res) => {
 });
 
 //Update Place
-router.get('/:id/edit', (req, res) => {
+router.get('/:id/Edit', (req, res) => {
   db.Place.findById(req.params.id)
       .then((place) => {
           res.render('places/Edit', { place });
